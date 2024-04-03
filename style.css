@@ -31,7 +31,7 @@ body * {
   color: var(--text-color);
 }
 #container {
-  width: 100%;
+  width: 90%;
   max-width: 560px;
   margin: 56px auto 0px;
 }
@@ -65,11 +65,16 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+
+  animation: slide-back 0.8s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.8s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--hightlight-color);
 }
 #switch span {
   display: block;
@@ -133,11 +138,28 @@ footer {
   font-size: 14px;
 }
 
-@media (min-width: 700px){
-  :root{
+@media (min-width: 700px) {
+  :root {
     --bg-url: url(./assets/bg-desktop.jpg);
   }
-  .light{
+  .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+/*animation*/
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
