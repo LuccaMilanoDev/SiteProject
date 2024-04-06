@@ -1,10 +1,14 @@
 :root {
   --text-color: white;
   --bg-url: url(./assets/bg-mobile.jpg);
+  --surfarce-color: rgba(255, 255, 255, 0.1);
+  --stoke-color: rgba(255, 255, 255, 0.5);
   --switch-bg-url: url(./assets/moon-stars.svg);
 }
 .lightSobre {
   --text-color: black;
+  --surfarce-color: rgba(0, 0, 0, 0.05);
+  --stoke-color: rgba(0, 0, 0, 0.5);
   --bg-url: url(./assets/bg-mobile-light.jpg);
   --switch-bg-url: url(./assets/sun.svg);
 }
@@ -39,7 +43,7 @@ body * {
   animation: slide-back 0.8s;
 }
 
-.light #switch button {
+.lightSobre #switch button {
   animation: slide-in 0.8s forwards;
 }
 
@@ -50,9 +54,35 @@ body * {
   display: block;
   width: 64px;
   height: 24px;
-  background: black;
-  border: gray;
+  background: var(--surfarce-color);
+  border: var(--stoke-color);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+  .lightSobre{
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+/*animation*/
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
