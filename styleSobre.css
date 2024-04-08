@@ -64,10 +64,15 @@ body * {
 #text{
   text-align: center;
 }
-p{
+.p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p p {
   font-weight: 600;
   max-width: 450px;
-  margin-left: 450px;
 }
 
 @media (min-width: 700px) {
