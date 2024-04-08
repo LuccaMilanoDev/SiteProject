@@ -61,6 +61,15 @@ body * {
   border-radius: 9999px;
 }
 
+#text{
+  text-align: center;
+}
+p{
+  font-weight: 600;
+  max-width: 450px;
+  margin-left: 450px;
+}
+
 @media (min-width: 700px) {
   :root {
     --bg-url: url(./assets/bg-desktop.jpg);
